@@ -34,6 +34,8 @@ class Algolia_Algoliasearch_Helper_Config extends Mage_Core_Helper_Abstract
     const PRODUCT_CUSTOM_RANKING               = 'algoliasearch/products/custom_ranking_product_attributes';
     const RESULTS_LIMIT                        = 'algoliasearch/products/results_limit';
     const SHOW_SUGGESTIONS_NO_RESULTS          = 'algoliasearch/products/show_suggestions_on_no_result_page';
+    const PRODUCTS_REMOVE_STOP_WORDS           = 'algoliasearch/products/remove_stop_words';
+    const PRODUCTS_IGNORE_PLURALS              = 'algoliasearch/products/ignore_plurals';
 
     const CATEGORY_ATTRIBUTES                  = 'algoliasearch/categories/category_additional_attributes2';
     const INDEX_PRODUCT_COUNT                  = 'algoliasearch/categories/index_product_count';
@@ -212,6 +214,16 @@ class Algolia_Algoliasearch_Helper_Config extends Mage_Core_Helper_Abstract
     public function getRemoveWordsIfNoResult($storeId = NULL)
     {
         return Mage::getStoreConfig(self::REMOVE_IF_NO_RESULT, $storeId);
+    }
+
+    public function getRemoveStopWordsConfig($storeId = NULL)
+    {
+        return Mage::getStoreConfig(self::PRODUCTS_REMOVE_STOP_WORDS, $storeId);
+    }
+
+    public function getIgnorePlurals($storeId = NULL)
+    {
+        return Mage::getStoreConfig(self::PRODUCTS_IGNORE_PLURALS, $storeId);
     }
 
     public function getNumberOfProductResults($storeId = NULL)

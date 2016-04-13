@@ -182,7 +182,9 @@ class Algolia_Algoliasearch_Helper_Entity_Producthelper extends Algolia_Algolias
             'unretrievableAttributes'   => $unretrievableAttributes,
             'attributesForFaceting'     => $attributesForFaceting,
             'maxValuesPerFacet'         => (int) $this->config->getMaxValuesPerFacet($storeId),
-            'removeWordsIfNoResults'    => $this->config->getRemoveWordsIfNoResult($storeId)
+            'removeWordsIfNoResults'    => $this->config->getRemoveWordsIfNoResult($storeId),
+            'removeStopWords'           => $this->config->getRemoveStopWordsConfig($storeId),
+            'ignorePlurals'             => $this->config->getIgnorePlurals($storeId),
         );
 
         // Additional index settings from event observer
